@@ -1,0 +1,12 @@
+property:
+  purchase_price: 500000
+  loan_interest_rate: 0.04
+  loan_term_years: 30
+  gross_rental_income_per_month: 500
+  energy_efficiency_class: A
+  down_payment: 0.018
+  operating_expenses_per_month:
+    property_management: 200
+    maintenance: 100
+    insurance: 100
+    property_taxes: 150
