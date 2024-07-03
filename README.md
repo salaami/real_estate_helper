@@ -3,30 +3,28 @@
 ## To evaluate offers found on the internet, I am writing a simple Python app that calculates the relevant KPIs from a simple yml file. For the time being the process is supposed to look as follows:
 1. Find an offer online.
 2. Identify the data in the offer.
-3. Fill the yml file with the according data.
-4. Run the program and recieve an output file.
+3. Fill the yaml file with the according data.
+4. Run the program.
 
 ## The KPIs to be calculated are:
-1. Factor: purchase_price/annual_net_rent
-2. Gross Return: annual_net_rent/purchase_price
-3. Net Return: (annual_net_rent - management cost)/purchase_price
-4. Equity Return: net_profit/equity_invested
-5. Cash Flow: rent - (finance_cost + maintenance_costs )
-
+1. Gross Return: annual_net_rent/purchase_price
+2. Net Return: (annual_net_rent - management cost)/purchase_price
+3. Equity Return: net_profit/equity_invested
+4. Cash Flow: rent - (finance_cost + maintenance_costs )
 
 ## Input data:
-1. net_rent: Amount that the renter pays to you on a monthly basis. It is the income that the property generates for you before costs.
-2. purchase_price: Total price of the property.
-3. loan_interest_rate: approx. lending interest rate.
-4. loan_term_years: duration until complete repayment.
-5. gross_rental_income_per_month:
-6. energy_efficiency_class:
-7. initial_repayment:
-8. property_management:
-9. maintenance cost:
-10. insurance:
-11. property_taxes: Property tax is part of the running costs of your property. As a landlord, you can pass the property tax on to your tenant.
-12. location:
+1. purchase_price: Total price of the property in €.
+2. gross_rental_income_per_month: Amount that the renter pays to you on a monthly basis in €.
+3. energy_efficiency_class: Ranges from A - G.
+4. last_renovated: date of last renovation or modernization in format YYYY-MM-DD.
+5. location: City and district of the object as text.
+6. loan_term_years: duration until complete repayment in years.
+7. down_payment: initial repayment as share of purchase_price.
+8. loan_interest_rate: approx. lending interest rate.
+9. property_management: costs for tenant management, rent collection, and other costs for the management etc. in €.
+10. maintenance cost: cost for upkeep and repair of the property in €.
+11. insurance: building or loss-of-rent insurance cost in €.
+12. property_taxes: Property tax is part of the running costs of your property. As a landlord, you can pass the property tax on to your tenant in €.
 
 ## Features
 ### Repayment plan showing the development of the following accounts:
@@ -37,3 +35,9 @@
 - interest and finance_cost
 - repayment
 - liquidity before taxes
+### Improve data input
+- Introduce a configuration that checks the data inputs on plausibility.
+### Better output format then stdout
+- Export to a file
+- Visualize in a files
+- Visualize in an app like flask

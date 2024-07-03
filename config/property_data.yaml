@@ -1,10 +1,13 @@
 property:
-  purchase_price: 500000
-  loan_interest_rate: 0.04
-  loan_term_years: 30
+  purchase_price: 200000
   gross_rental_income_per_month: 500
   energy_efficiency_class: A
-  down_payment: 0.018
+  last_renovated: 2023-01-01
+  location: Hamburg Allermoehe
+  loan_details:
+    loan_term_years: 30
+    down_payment: 0.018
+    loan_interest_rate: 0.04
   operating_expenses_per_month:
     property_management: 200
     maintenance: 100
