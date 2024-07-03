@@ -15,11 +15,15 @@ class RealEstateEvaluator:
     def extract_data(self):
         property_data = self.data['property']
         self.purchase_price = property_data['purchase_price']
-        self.down_payment = property_data['down_payment']
-        self.loan_interest_rate = property_data['loan_interest_rate']
-        self.loan_term_years = property_data['loan_term_years']
+        self.down_payment = property_data['loan_details']['down_payment']
+        self.loan_interest_rate = property_data['loan_details']['loan_interest_rate']
+        self.loan_term_years = property_data['loan_details']['loan_term_years']
         self.gross_rental_income_per_month = property_data['gross_rental_income_per_month']
         self.operating_expenses_per_month = sum(property_data['operating_expenses_per_month'].values())
+
+    def calculate_gross_return(self):
+        gross_rental_income_per_year = (self.gross_rental_income_per_month ) * 12
+        return gross_rental_income_per_year / self.purchase_price * 100
 
     def calculate_noi(self):
         gross_income_per_year = (self.gross_rental_income_per_month ) * 12
@@ -45,6 +49,7 @@ class RealEstateEvaluator:
         return self.purchase_price / (self.gross_rental_income_per_month * 12)
 
     def evaluate(self):
+        gross_return = self.calculate_gross_return()
         noi = self.calculate_noi()
         cash_flow = self.calculate_cash_flow(noi)
         cap_rate = self.calculate_cap_rate(noi)
@@ -52,11 +57,12 @@ class RealEstateEvaluator:
         grm = self.calculate_grm()
 
         results = {
-            "Net Operating Income (NOI)": f"${noi:.2f}",
+            "Gross Return": f"{gross_return:.2f}%",
+            "Net Operating Income": f"${noi:.2f}",
             "Cash Flow": f"${cash_flow:.2f}",
             "Cap Rate": f"{cap_rate:.2f}%",
-            "Return on Investment (ROI)": f"{roi:.2f}%",
-            "Gross Rent Multiplier (GRM)": f"{grm:.2f}"
+            "Return on Investment": f"{roi:.2f}%",
+            "Gross Rent Multiplier": f"{grm:.2f}"
         }
 
         return results
