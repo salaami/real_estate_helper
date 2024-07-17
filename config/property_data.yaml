@@ -1,15 +1,23 @@
 property:
-  purchase_price: 200000
-  gross_rental_income_per_month: 500
+  gross_rental_income_per_month: 650
   energy_efficiency_class: A
-  last_renovated: 2023-01-01
+  build_at: 1998-01-01
+  last_renovated: 2010-01-01
   location: Hamburg Allermoehe
+  purchase_details:
+    price: 124900
+    agent_costs: 0
+    notary_costs: 1000
+    property_registry_costs: 1000
+  taxes:
+    property_transfer: 0.055
+  operating_expenses_per_month:
+    property_management: 200
+    maintenance: 100
+    modernization: 0
+    insurance: 100
   loan_details:
     loan_term_years: 30
     down_payment: 0.018
     loan_interest_rate: 0.04
-  operating_expenses_per_month:
-    property_management: 200
-    maintenance: 100
-    insurance: 100
-    property_taxes: 150
+
